@@ -1,0 +1,7 @@
+#mu-canvas {
+	margin-top: 27vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    background-color: bisque;
+}

@@ -1,0 +1,84 @@
+.drum-machine {
+    padding: 12px;
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.tracks {
+    margin-top: 20px;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.instrument-name {
+    width: 150px;
+    text-transform: capitalize;
+}
+
+.steps {
+    display: flex;
+    gap: 5px;
+    margin:auto;
+}
+
+.vol-slider {
+    width: 70px;
+}
+
+.step {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px 0 0;
+    background-color: #e0e0e0;
+    border: 1px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.wholebeat {
+    height: 30px;
+}
+
+.upbeat {
+    height: 15px;
+}
+
+.step:hover {
+    background-color: lightsalmon;
+}
+
+.step.active {
+    background-color: #76c7c0;
+}
+
+.bpm-control {
+    margin-bottom: 20px;
+}
+
+.bpm-input {
+    font-size: 1.2rem;
+}
+
+.controls button {
+    background-color: #76c7c0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.current {
+    border: 4px solid lightsalmon;
+    
+}
+
+.controls button:hover {
+    background-color: #5aa59f;
+}
