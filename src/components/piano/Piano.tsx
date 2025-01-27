@@ -4,6 +4,23 @@ import { Paper, Typography, Button } from '@mui/material';
 
 // Map MIDI note numbers to corresponding piano key names and audio files
 
+const keyboardMapping = {
+  a: 48, // Middle C
+  w: 49, // C#
+  s: 50, // D
+  e: 51, // D#
+  d: 52, // E
+  f: 53, // F
+  t: 54, // F#
+  g: 55, // G
+  y: 56, // G#
+  h: 57, // A
+  u: 58, // A#
+  j: 59, // B
+  k: 60 // High C
+};
+
+
 const MIDI_NOTE_TO_KEY = {
   47: { key: "B1"},
   48: { key: "C2"},
@@ -57,6 +74,13 @@ const PianoVisualizer = () => {
     } else {
       alert("Web MIDI API not supported in this browser.");
     }
+    window.addEventListener("keydown", handleKeyboardDown);
+    window.addEventListener("keyup", handleKeyboardUp);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyboardDown);
+      window.removeEventListener("keyup", handleKeyboardUp);
+    };
   }, []);
 
   const onMIDISuccess = (midiAccess) => {
@@ -81,6 +105,23 @@ const PianoVisualizer = () => {
       setActiveNotes((prev) => prev.filter((n) => n !== note));
     }
   };
+
+  const handleKeyboardDown = (event) => {
+    const note = keyboardMapping[event.key];
+    if (note) {
+      playNoteSound(note);
+      setActiveNotes((prev) => [...new Set([...prev, note])]);
+    }
+  };
+
+  const handleKeyboardUp = (event) => {
+    const note = keyboardMapping[event.key];
+    if (note) {
+      stopNoteSound(note);
+      setActiveNotes((prev) => prev.filter((n) => n !== note));
+    }
+  };
+
 
   const playNoteSound = (note) => {
     oscillators[note] = context.createOscillator();
