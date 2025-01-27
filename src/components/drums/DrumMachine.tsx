@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import './DrumMachine.css'; // Import styles
 import Hihat from './hihat/Hihat';

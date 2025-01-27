@@ -1,12 +1,9 @@
 import PianoVisualizer from './components/piano/Piano';
 import './App.css'
-import Sheet from './components/piano/sheetMusic/Sheet';
 import DrumMachine from './components/drums/DrumMachine';
-import { Paper, Typography, Button } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 import Footer from './components/footer/Footer';
 
-
-<Sheet/>
 function App() {
 
   return (

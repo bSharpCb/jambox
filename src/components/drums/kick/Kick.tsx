@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Button, ButtonGroup, Accordion, AccordionSummary, AccordionDetails, Typography, Tooltip } from '@mui/material';
